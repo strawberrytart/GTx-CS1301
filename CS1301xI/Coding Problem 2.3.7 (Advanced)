@@ -43,3 +43,8 @@ print('Confused:',happy and sad)
 print('Bored:',not (happy or sad or busy))
 print('Anxious:',not (happy or sad) and stressed) 
 
+
+#De Morgan's Law 
+# not (P and Q and R)= not P or not Q or not R
+# not (P or Q or R)= not P and not Q and not R
+#neither P...nor Q = not P and not Q
