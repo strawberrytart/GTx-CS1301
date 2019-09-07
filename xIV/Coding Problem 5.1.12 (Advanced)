@@ -1,0 +1,6 @@
+def total_cost(a_list):
+    total=0.0
+    for burrito in a_list:
+        total+= burrito.get_cost()
+    return total 
+        
