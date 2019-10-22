@@ -34,7 +34,22 @@ def in_parentheses(a_string):
     else:
         return ""
 
-
+def in_parentheses(a_string):
+    if '(' in a_string and ')' in a_string:
+        list_1=a_string.split('(')
+        
+        for i in list_1[1:]:
+            if ')' in i:
+                list_2=i.split(')')
+                return list_2[0]
+            
+            else:
+                return ""
+    
+    
+    else:
+        return ""
+        
 #Below are some lines of code that will test your function.
 #You can change the value of the variable(s) to test your
 #function with different inputs.
