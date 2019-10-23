@@ -34,21 +34,36 @@ def in_parentheses(a_string):
     else:
         return ""
 
-def in_parentheses(a_string):
-    if '(' in a_string and ')' in a_string:
-        list_1=a_string.split('(')
-        
-        for i in list_1[1:]:
-            if ')' in i:
-                list_2=i.split(')')
-                return list_2[0]
-            
-            else:
-                return ""
-    
-    
-    else:
+
+def in_parentheses(sentence):
+    try:
+        return sentence[sentence.index("(") + 1:sentence.index(")")]
+    except ValueError:
         return ""
+
+
+def in_parentheses(sentence):
+    
+    #First we check if both parentheses are present:
+    
+    if "(" in sentence and ")" in sentence:
+        
+        #Then we check if they're in the right order:
+        
+        if sentence.find("(") < sentence.find(")"):
+            
+            #If we get here, then it's a valid set,
+            #and we can return the substring from
+            #the index of ( to the index of ):
+            
+            return sentence[sentence.find("(") : sentence.find(")")]
+    
+    #The only way to get to this next line is if the return
+    #on line 25 did not run, so we can return a blank
+    #string here:
+    
+    return ""
+    
         
 #Below are some lines of code that will test your function.
 #You can change the value of the variable(s) to test your
