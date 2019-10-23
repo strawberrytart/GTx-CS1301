@@ -1,0 +1,86 @@
+#Write a function called after_second that accepts two 
+#arguments: a target string to search, and string to search
+#for. The  function should return everything in the first
+#string *after* the *second* occurrence of the search term.
+#You can assume  there will always be at least two
+#occurrences of the search term in the first string. 
+#
+#For example:
+#  after_second("11223344554321", "3") -> 44554321
+#
+#The search term "3" appears at indices 4 and 5. So, this
+#returns everything from the index 6 to the end.
+#
+#  after_second("heyyoheyhi!", "hey") -> hi!
+#
+#The search term "hey" appears at indices 0 and 5. The
+#search term itself is three characters. So, this returns
+#everything from the index 8 to the end.
+#
+#Hint: This may be more complicated than it looks! You'll
+#have to look at the length of the search string and
+#either modify the target string or take advantage of the
+#extra arguments you can pass to find().
+
+    
+def after_second(target_string,a_string):
+    
+    occur=0
+   
+    while target_string.find(a_string)>=0 and occur<2:
+        location=target_string.find(a_string)
+        target_string=target_string[location+len(a_string):]
+        occur+=1
+    
+    return target_string
+        
+    
+def after_second(target, search):
+    
+    #We can do this in two ways. First, let's do it with
+    #arguments to the find() method. First, we want to find
+    #the first place that search appears:
+    
+    first_loc = target.find(search)
+    
+    #Next, we want to find the second location where search
+    #appears:
+    
+    second_loc = target.find(search, first_loc + 1)
+    
+    #Now, second_loc stores the second place that search
+    #appears. We want to return everything from after that
+    #instance of search -- so, we add the length of search
+    #to move past it, and return that substring:
+    
+    return target[second_loc + len(search):]    
+
+
+#Below are some lines of code that will test your function.
+#You can change the value of the variable(s) to test your
+#function with different inputs.
+#
+#If your function works correctly, this will originally
+#print 44554321 and hi!, each on their own line.
+print(after_second("11223344554321", "3"))
+print(after_second("heyyoheyhi!", "hey"))
+
+
+##Non Loop Method##
+#def after_second(target_string,substring):
+#b=len(substring)
+#first=target_string.find(substring)
+#print(first)
+#second=target_string[b+first:].find(substring)
+#spliced=target_string[b+first:]
+#print(second)
+#return spliced[b+second:]
+
+
+##For Loop Method##
+#def after_second(target_string, substring):
+#    b=len(substring)
+#    for i in range(0,2):
+#        index=target_string.find(substring)
+#        target_string=target_string[index+b:]
+#    return target_string
