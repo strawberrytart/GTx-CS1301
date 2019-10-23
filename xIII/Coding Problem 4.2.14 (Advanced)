@@ -37,7 +37,25 @@ def mock(a_string):
             total=total+a_string[i]
     return total
             
-
+def mock(a_string):
+    result=''
+    for i in range(0,len(a_string)):
+        
+        if i%2==0:
+            if 97<=ord(a_string[i])<=122:
+                result+=a_string[i].upper()
+            
+            
+            elif 65<=ord(a_string[i])<=90:
+                result+=a_string[i].lower()
+               
+            else:
+                result+=a_string[i]
+               
+        else:
+            result+=a_string[i]
+            
+    return result 
 
 #Below are some lines of code that will test your function.
 #You can change the value of the variable(s) to test your
