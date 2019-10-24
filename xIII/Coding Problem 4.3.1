@@ -13,7 +13,7 @@
 #function and haven't returned True yet, then you might
 #want to return False.
 
-
+Method 1: 
 def lucky_sevens(a_list):
     n=0
     i=0
@@ -28,7 +28,8 @@ def lucky_sevens(a_list):
             n=0
         i+=1
     return False
-"""
+
+Method 2: 
 def lucky_sevens(a_list):
     count=0
 
@@ -42,13 +43,31 @@ def lucky_sevens(a_list):
         if count==3:
             return True
     return False 
- """               
-            
-                
-            
+ 
+ Method 3: Converting List to Strings
+ def lucky_sevens(a_list):
+    
+    #map() takes two arguments: a function and a list. It returns
+    #a new list created by applying that function to each item in
+    #that list:
+    
+    a_list_as_strings = map(str, a_list)
+    
+    #So, this effectively duplicates the code in the comment above,
+    #but without changing a_list. It applies the function str() to
+    #each item in a_list, and returns a list of the results.
+    #
+    #Then, we can check if "777" is in the result of joining that
+    #list of strings:
+    
+    a_list_as_one_string = "".join(a_list_as_strings)
+    return "777" in a_list_as_one_string
+
+    #All of which could becompressed down to one line:
+    #return "777" in "".join(map(str, a_list))
             
 
-
+           
 #Below are some lines of code that will test your function.
 #You can change the value of the variable(s) to test your
 #function with different inputs.
