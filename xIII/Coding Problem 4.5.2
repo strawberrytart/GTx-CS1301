@@ -39,21 +39,15 @@ french_dict = {"me": "moi", "hello": "bonjour",
 
 
 #Write your function here!
-def french2eng(sentence):
-    result=[]
-    lower_case=sentence.lower()
-    splitted=lower_case.split()
-    for i in splitted:
-        if i in french_dict:
-            french_word=french_dict[i]
-            result.append(french_word)
-        else: 
-            eng_word=i
-            result.append(eng_word)
-        
-    x=" ".join(result)
-    return x
-
+def french2eng(a_string):
+    a_list=a_string.lower().split(' ')
+    #print(a_list)
+    for i in range(len(a_list)):
+        word=a_list[i]
+        if word in french_dict:
+            a_list[i]=french_dict[word]        
+    #print(a_list)
+    return ' '.join(a_list)
             
             
 
