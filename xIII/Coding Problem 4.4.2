@@ -11,18 +11,26 @@
 
 
 #Add your function here!
-#def average_file(filename):
-#    fo=open(filename)
-#    total=0
-#    total_lines=0
-#    for line in fo:
-#        try:
-#            total_lines+=1
-#            total=total+int(line)
-#        except:
-#            return "Error reading file!"
-#    return total/total_lines
-#    fo.close()
+"""
+def average_file(filename):
+    file=open(filename)
+    current_read=file.readline()
+    total=0
+    count=0
+    while current_read:
+        try:
+            number=int(current_read)
+        except:
+            file.close()
+            return "Error reading file!"
+        else:
+            print('no error')
+            total=total+number
+            count+=1
+            current_read=file.readline()
+    file.close()
+    return total/count
+"""
             
 def average_file(filename):
     fo=open(filename)
