@@ -24,7 +24,16 @@ def write_1301(filename,tupleList):
         fo.write(str(tup[len(tup)-1]))
         fo.write('\n')        
     fo.close()
-            
+    
+def write_1301(filename, tuple_list):
+    file_writer = open(filename, "w")
+    for line in tuple_list:
+        file_writer.write(str(number) + " ")
+        file_writer.write(name + " ")
+        file_writer.write(str(grade) + " ")
+        file_writer.write(str(max_grade) + " ")
+        file_writer.write(str(weight) + "\n")
+    file_writer.close()            
 
 
 #The code below will test your function. It's not used
